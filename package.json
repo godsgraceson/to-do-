@@ -2,10 +2,14 @@
   "name": "simple-todo-cicd",
   "version": "1.0.0",
   "private": true,
-  "description": "Lightweight To-Do app for demonstrating GitHub and Jenkins CI/CD",
+  "type": "module",
   "scripts": {
-    "dev": "node -e \"console.log('Dev stage: source files are ready.')\"",
-    "build": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); fs.mkdirSync('dist/src',{recursive:true}); fs.copyFileSync('index.html','dist/index.html'); fs.copyFileSync('src/app.js','dist/src/app.js'); fs.copyFileSync('src/style.css','dist/src/style.css'); console.log('Build completed: dist/')\"",
-    "test": "node tests/test.js"
+    "dev": "vite",
+    "build": "vite build",
+    "test": "node tests/test.js",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.3"
   }
 }
